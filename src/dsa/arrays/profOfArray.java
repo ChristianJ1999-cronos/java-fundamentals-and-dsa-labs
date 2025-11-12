@@ -13,14 +13,12 @@ class Solution {
         left[0] = 1;                         // nothing left of index 0
         for (int i = 1; i < n; i++) {
             left[i] = left[i - 1] * nums[i - 1];
-            // e.g., for [1,2,4,6] -> left becomes [1, 1, 2, 8]
         }
 
         // build right[]
         right[n - 1] = 1;                    // nothing right of last index
         for (int i = n - 2; i >= 0; i--) {
             right[i] = right[i + 1] * nums[i + 1];
-            // e.g., for [1,2,4,6] -> right becomes [48, 24, 6, 1]
         }
 
         // res[i] = left[i] * right[i]
